@@ -41,6 +41,13 @@ class AdminModel extends CI_Model {
         return $query->num_rows();
     }
 
+    function fetch_mobile_app_users() {
+        $this->db->from('mobile_users');
+        $this->db->order_by('user_id', 'desc');
+        $query = $this->db->get()->result();
+        return $query;
+    }
+
     function fetch_users() {
         $this->db->from('users');
         $query = $this->db->get()->result();

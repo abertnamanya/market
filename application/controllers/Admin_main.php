@@ -29,6 +29,13 @@ class Admin_main extends CI_Controller {
         $this->load->view('layout/_layout_main', $data);
     }
 
+    public function mobile_users() {
+        $data['mobile_users'] = $this->AdminModel->fetch_mobile_app_users();
+        $data['pageName'] = "Users";
+        $data['subview'] = $this->load->view('mobile_users', $data, true);
+        $this->load->view('layout/_layout_main', $data);
+    }
+
     //list users
 
     public function users() {
@@ -236,7 +243,7 @@ class Admin_main extends CI_Controller {
 
     function deletePrice($price_id) {
         $this->AdminModel->delete_Price($price_id);
-        echo json_encode(array('status' => TRUE)); 
+        echo json_encode(array('status' => TRUE));
     }
 
 }

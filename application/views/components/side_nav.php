@@ -15,7 +15,8 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url(); ?>admin_main/users">Users</a></li>
+                    <li><a href="<?php echo base_url(); ?>admin_main/users">System Users</a></li>
+                    <li><a href="<?php echo base_url(); ?>admin_main/mobile_users">Mobile App Users</a></li>
                 </ul>
             </li>
             <li class="treeview">

@@ -93,6 +93,8 @@
                 $('[name="price"]').val(data.price);
                 $('[name="qty"]').val(data.quantity);
                 $('[name="units"]').val(data.units);
+                $('[name="market"]').val(data.market_market_id);
+                $('[name="product"]').val(data.product_product_id);
                 $('[name="time_stamp"]').val(data.time_stamp);
                 $('[name="price_id"]').val(data.price_id);
                 $('.modal-title').text('Edit price');
