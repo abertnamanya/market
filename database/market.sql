@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2017 at 10:35 AM
+-- Generation Time: Jul 06, 2017 at 02:20 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -86,7 +86,32 @@ INSERT INTO `markets` (`market_id`, `market_name`, `location_location_id`) VALUE
 (1, 'Kabale central Market', 6),
 (2, 'Muyajari market', 2),
 (3, 'Kigogi fruits market', 1),
-(4, 'Makaga Market', 4);
+(4, 'Makaga Market', 4),
+(5, 'Bunyoyi Market', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mobile_users`
+--
+
+CREATE TABLE `mobile_users` (
+  `user_id` int(11) NOT NULL,
+  `firstName` varchar(50) DEFAULT NULL,
+  `lastName` varchar(50) DEFAULT NULL,
+  `contact` varchar(50) DEFAULT NULL,
+  `password` varchar(50) DEFAULT NULL,
+  `_when_added` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mobile_users`
+--
+
+INSERT INTO `mobile_users` (`user_id`, `firstName`, `lastName`, `contact`, `password`, `_when_added`) VALUES
+(1, 'Namanya', 'Abert', '0754938667', 'abert', '2017-06-06'),
+(2, 'Muranga', 'james', '0782469964', 'james', '2017-06-30'),
+(5, 'Namanya', 'Allan', '0783821645', 'allan', '2017-07-06');
 
 -- --------------------------------------------------------
 
@@ -110,11 +135,14 @@ CREATE TABLE `prices` (
 
 INSERT INTO `prices` (`price_id`, `product_product_id`, `quantity`, `units`, `price`, `market_market_id`, `time_stamp`) VALUES
 (1, 6, 1, 'Kgs', 2800, 1, '2017-06-26'),
-(2, 1, 1, 'Kgs', 1800, 1, '2017-06-26'),
-(3, 2, 1, 'Trays', 8600, 1, '2017-06-26'),
 (4, 1, 1, 'Kgs', 1300, 2, '2017-06-26'),
-(5, 2, 1, 'Trays', 9000, 1, '2017-06-26'),
-(6, 4, 1, 'Cups', 2000, 2, '2017-06-26');
+(8, 2, 1, 'Trays', 9000, 1, '2017-07-01'),
+(9, 1, 1, 'Kgs', 1300, 1, '2017-07-01'),
+(10, 3, 1, 'Litres', 900, 1, '2017-07-01'),
+(11, 4, 1, 'Kgs', 2300, 1, '2017-07-01'),
+(12, 5, 2, 'Numbers', 3500, 1, '2017-07-01'),
+(13, 6, 1, 'Cups', 750, 1, '2017-07-01'),
+(14, 4, 1, 'Kgs', 4000, 5, '2017-07-05');
 
 -- --------------------------------------------------------
 
@@ -190,6 +218,12 @@ ALTER TABLE `markets`
   ADD KEY `location_location_id` (`location_location_id`);
 
 --
+-- Indexes for table `mobile_users`
+--
+ALTER TABLE `mobile_users`
+  ADD PRIMARY KEY (`user_id`);
+
+--
 -- Indexes for table `prices`
 --
 ALTER TABLE `prices`
@@ -228,12 +262,17 @@ ALTER TABLE `location`
 -- AUTO_INCREMENT for table `markets`
 --
 ALTER TABLE `markets`
-  MODIFY `market_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `market_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `mobile_users`
+--
+ALTER TABLE `mobile_users`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `prices`
 --
 ALTER TABLE `prices`
-  MODIFY `price_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `price_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `products`
 --
